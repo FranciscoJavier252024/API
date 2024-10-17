@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+</head>
+<body>
+    <h1>Buscar Producto</h1>
+    <form method="get">
+        <label for="id">ID del Producto:</label>
+        <input type="text" name="id" id="id" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if producto %}
+        <h2>Detalles del Producto</h2>
+        <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+        <p><strong>Precio:</strong> {{ producto.precio }}</p>
+        <p><strong>Existencias:</strong> {{ producto.existencias }}</p>
+    {% else %}
+        <p>No se encontró ningún producto con ese ID.</p>
+    {% endif %}
+</body>
+</html>
